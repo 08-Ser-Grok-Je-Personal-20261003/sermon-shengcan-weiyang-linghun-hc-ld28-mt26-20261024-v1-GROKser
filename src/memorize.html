@@ -1,0 +1,73 @@
+<header class="sec">
+  <h1 style="font-size:clamp(1.6rem,1.2rem+2.4vw,2.6rem);margin-bottom:.3em">{{I brain icolor-c}} 速记中心</h1>
+  <p class="lead" style="font-size:1rem">闪卡、小测验、间隔复习表和一页可打印摘要。进度只保存在你这台设备的浏览器里，不会上传。</p>
+  <div class="chips no-print"><a class="chip gold" href="#h-cards">闪卡</a><a class="chip grace" href="#h-quiz">测验</a><a class="chip water" href="#h-spaced">间隔复习</a><a class="chip creed" href="#h-creedquiz">信经测验</a><a class="chip rose" href="#h-print">打印摘要</a></div>
+</header>
+
+<section class="sec no-print" id="s-cards">
+  <h2 id="h-cards"><span class="num">1</span>闪卡</h2>
+  <p>点击卡片翻面；点蓝色空格显示答案；然后选择“记得”“模糊”“忘了”。系统会让不熟的卡更常出现（Leitner 盒子，共5箱）。</p>
+  <div class="ctrl" role="group" aria-label="选择卡组">
+    <button class="hbtn" data-deck="heads" aria-pressed="true">三个要点</button>
+    <button class="hbtn" data-deck="texts" aria-pressed="false">关键经文</button>
+    <button class="hbtn" data-deck="concepts" aria-pressed="false">概念</button>
+    <button class="hbtn" data-deck="hc28" aria-pressed="false">HC 问75–76 填空</button>
+    <button class="hbtn" data-deck="creed" aria-pressed="false">信经下一句</button>
+    <button class="hbtn" data-deck="all" aria-pressed="false">全部</button>
+  </div>
+  <div class="bar" aria-hidden="true"><i id="fc-bar"></i></div>
+  <p class="muted small" id="fc-stat" style="font-family:var(--sans);text-align:center"></p>
+  <div class="fc" id="fc" tabindex="0" role="button" aria-label="闪卡，点击翻面"><div class="fc-in">
+    <div class="fc-face fc-front"><span class="k" id="fc-k"></span><div class="q" id="fc-q"></div><span class="muted small" id="fc-box" style="font-family:var(--sans)"></span></div>
+    <div class="fc-face fc-back"><span class="k">答案</span><div id="fc-a"></div></div>
+  </div></div>
+  <div class="ctrl"><button class="btn sm line" data-grade="bad" type="button">✗ 忘了</button><button class="btn sm line" data-grade="hard" type="button">△ 模糊</button><button class="btn sm" data-grade="good" type="button">✓ 记得</button><button class="btn sm line" id="fc-skip" type="button">跳过</button><button class="btn sm line" id="fc-reset" type="button">重置进度</button></div>
+  <div class="co info rv"><div><b class="t">说明</b><p>“HC 问75–76 填空”与“信经下一句”两个卡组的文字，来自页面内嵌的原文数据（逐字），浏览器只负责把部分文字遮住。其余卡片是笔者自撰；经文卡片只写大意，请对照圣经。</p></div></div>
+</section>
+
+<section class="sec no-print" id="s-quiz">
+  <h2 id="h-quiz"><span class="num">2</span>讲章小测验</h2>
+  <div class="card quiz" id="quiz-ser"><div class="q-text"></div><div class="q-opts"></div><div class="q-fb" role="status"></div><div class="ctrl"><span class="q-score"></span><button class="btn sm q-next" type="button" hidden>下一题</button></div></div>
+</section>
+
+<section class="sec no-print" id="s-creedquiz">
+  <h2 id="h-creedquiz"><span class="num">3</span>信经测验</h2>
+  <div class="card quiz" id="quiz-creed">
+    <div class="ctrl" style="justify-content:flex-start"><select aria-label="选择信经"><option value="apostles">使徒信经</option><option value="nicene">尼西亚信经</option><option value="athanasian">亚他那修信经</option></select>
+    <span class="seg" role="group" aria-label="题型"><button type="button" data-kind="next" aria-pressed="true">下一句</button><button type="button" data-kind="order" aria-pressed="false">排顺序</button></span></div>
+    <div class="q-text"></div><div class="q-opts"></div><div class="q-fb" role="status"></div><div class="ctrl"><span class="q-score"></span><button class="btn sm q-next" type="button" hidden>下一题</button></div>
+  </div>
+</section>
+
+<section class="sec no-print" id="s-spaced">
+  <h2 id="h-spaced"><span class="num">4</span>间隔复习表</h2>
+  <div class="tbl-wrap min2 rv"><table>
+   <thead><tr><th>时间</th><th>内容</th><th>时长</th></tr></thead><tbody>
+   <tr><td>第0天（主日）</td><td>读讲章；说出三个要点和口诀“看·尝·行”</td><td>15分钟</td></tr>
+   <tr><td>第1天</td><td>背HC问75答；闪卡“三个要点”</td><td>10分钟</td></tr>
+   <tr><td>第4天</td><td>背HC问76答；比利时信条第35条再读一遍</td><td>10分钟</td></tr>
+   <tr><td>第7天</td><td>全部卡片；做讲章小测验</td><td>15分钟</td></tr>
+   <tr><td>第30天</td><td>HC问75–82通读；复习四种圣餐观对照</td><td>15分钟</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="sec" id="s-print">
+  <h2 id="h-print" class="no-print"><span class="num">5</span>一页可打印摘要</h2>
+  <p class="no-print"><button class="btn" type="button" data-print>{{I print}} 打印 / 存为PDF</button></p>
+  <div class="print-sheet">
+    <h3>基督在他的筵席上丰丰富富地喂养我们的灵魂：太26:17-30 · 出12:1-14 · 主日28</h3>
+    <p><b>一句福音</b>：那为我们舍身流血的基督，藉着圣灵、透过信心，用他自己喂养饥饿的灵魂，直到我们在父的国里与他同席。</p>
+    <table><thead><tr><th>要点</th><th>一句话</th><th>经文 / 信条</th></tr></thead><tbody>
+      <tr><td>① 信息</td><td>为我舍、为我流，确凿无疑</td><td>太26:26-28；出12:13；HC 问75</td></tr>
+      <tr><td>② 方式</td><td>藉圣灵、凭信心，与在天上的基督合一</td><td>约6；HC 问76；比35</td></tr>
+      <tr><td>③ 吩咐</td><td>如此行，记念我；省察、常来、相爱</td><td>林前11:23-29；HC 问77、81</td></tr></tbody></table>
+    <p><b>口诀</b>：看 · 尝 · 行</p>
+    <p><b>两种偏差</b>：把记号变成基督（变质）· 把记号变成空壳（只是纪念）</p>
+    {{SENT HC 76 answer | 因此，虽然基督在天上}}
+    {{SENT BC 35 text | 当我们凭信心}}
+    <p class="muted small">来源：ccifellowship.org 存档（引文）。笔者自撰部分以本站为准。</p>
+  </div>
+</section>
+{{DATA creeds}}
+{{DATA hc28}}
+<script type="application/json" id="cards-data">{"heads": [{"tag": "三点 ①", "q": "第一点：这喂养的……？", "a": "信息。饼擘开、杯递给：基督的身体为我舍、宝血为我流，确凿无疑（HC 问75；太26:26-28）。"}, {"tag": "三点 ②", "q": "第二点：这喂养的……？", "a": "方式。不是饼变质，而是藉着圣灵、凭着信心，与在天上的基督合一（HC 问76；比35）。"}, {"tag": "三点 ③", "q": "第三点：这喂养的……？", "a": "吩咐。“如此行，为的是记念我”：省察后来、常常来、相爱着来，直到他来（HC 问75、77；林前11）。"}, {"tag": "口诀", "q": "三点的口诀是什么？", "a": "看 · 尝 · 行：眼看饼擘开（信息），口尝主恩典（方式），手行主吩咐（命令）。"}, {"tag": "一句福音", "q": "用一句话说出这篇讲章的福音。", "a": "那为我们舍身流血的基督，藉着圣灵、透过信心，用他自己喂养饥饿的灵魂，直到我们在父的国里与他同席。"}, {"tag": "题目", "q": "讲章的题目、经文、要理问答分别是什么？", "a": "题目：基督在他的筵席上丰丰富富地喂养我们的灵魂；经文：太26:17-30、出12:1-14；要理问答：主日28（问75–77）。"}, {"tag": "两个应许", "q": "HC 问75 的两个应许（大意）？", "a": "① 正如亲眼看见饼擘开、杯递给，基督的身体与宝血确实为我舍、为我流；② 正如亲口尝饼与杯，基督用他自己喂养和更新我的灵魂。"}], "texts": [{"q": "太26:17-19 讲什么？", "a": "大意：除酵节第一天，门徒问在哪里预备逾越节；耶稣差他们进城到某人那里预备。"}, {"q": "太26:20-25 讲什么？", "a": "大意：晚上同席，耶稣说有一人要卖他；门徒问“是我吗？”，犹大也问。"}, {"q": "太26:26 讲什么？", "a": "大意：耶稣拿饼、祝福、擘开、递给门徒：拿着吃，这是我的身体。"}, {"q": "太26:27-28 讲什么？", "a": "大意：拿杯祝谢，递给他们：都喝；这是我立约的血，为多人流出来，使罪得赦。"}, {"q": "太26:29-30 讲什么？", "a": "大意：不再喝葡萄汁，直到在父的国里同喝新的；唱诗后往橄榄山去。"}, {"q": "出12:3-7 讲什么？", "a": "大意：各家取无残疾的一岁公羊羔，十四日黄昏宰杀，把血涂在门框和门楣上。"}, {"q": "出12:8-11 讲什么？", "a": "大意：当夜烤着吃，配无酵饼和苦菜；束腰、穿鞋、拿杖，赶紧地吃。"}, {"q": "出12:13-14 讲什么？", "a": "大意：血要作记号，神见血就越过；要记念这日，世世代代守为节。"}, {"q": "林前11:28 讲什么？", "a": "大意：人应当自己省察，然后吃这饼、喝这杯。"}, {"q": "林前5:7 讲什么？", "a": "大意：我们逾越节的羔羊基督已经被杀献祭。"}, {"q": "启19:9 讲什么？", "a": "大意：被请赴羔羊婚筵的有福了。"}], "concepts": [{"q": "变质说（罗马天主教）是什么？", "a": "认为饼酒的本体变成基督的身体与血，只保留外形。改革宗否认（HC 问78、80）。"}, {"q": "路德宗的“真实临在”常被怎样概括？", "a": "基督的身体与血“在、与、下”饼酒同在（常见概括；路德宗不喜欢“同质说”一词）。"}, {"q": "“纪念说”常与谁联系？", "a": "茨温利（学者对他后期观点是否仅止于纪念有讨论）。"}, {"q": "改革宗（加尔文、海德堡）怎样说？", "a": "真实而属灵：藉圣灵、凭信心，与在天上的基督相交；记号与所指不混同、也不分离。"}, {"q": "为什么说“基督在天上”？", "a": "他的真人性升天，坐在父的右边（使徒信经；HC 问76、80；比35）。"}, {"q": "信心在圣餐中像什么？", "a": "灵魂的手和口（比35）。"}, {"q": "谁可以来（HC 问81）？", "a": "因罪厌恶自己、投靠基督得赦、渴慕信心坚固与生命更新的人。"}, {"q": "洗礼与圣餐的区别？", "a": "洗礼是一次的接纳，圣餐是反复的喂养；同一个福音、同一种圣礼本质。"}], "quiz": [{"q": "HC 主日28 对应哪几问？", "opts": ["问72–74", "问75–77", "问78–79", "问80–82"], "a": 1, "why": "主日28＝问75–77；主日29＝问78–79；主日30＝问80–82。"}, {"q": "HC 问75 说圣餐给了几个应许？", "opts": ["一个", "两个", "三个", "四个"], "a": 1, "why": "问75：两个应许——为我舍、为我流；喂养和更新我的灵魂。"}, {"q": "按 HC 问76，基督现在在哪里？", "opts": ["在饼里", "在天上", "在祭坛上", "无处不在的身体"], "a": 1, "why": "问76：基督在天上，我们在地上，藉同一位圣灵与他合一。"}, {"q": "比利时信条第35条称信心为什么？", "opts": ["灵魂的眼和耳", "灵魂的手和口", "灵魂的门", "灵魂的灯"], "a": 1, "why": "比35：信心是我们灵魂的手和口。"}, {"q": "太26:28 称杯为什么？", "opts": ["感恩的杯", "立约的血", "救恩的杯", "忿怒的杯"], "a": 1, "why": "大意：这是我立约的血，为多人流出来，使罪得赦。"}, {"q": "出12 中血涂在哪里？", "opts": ["祭坛上", "门框和门楣上", "帐幕里", "衣服上"], "a": 1, "why": "出12:7：左右门框和门楣（大意）。"}, {"q": "三点的口诀是？", "opts": ["起·印·及·应", "看·尝·行", "信·望·爱", "听·信·守"], "a": 1, "why": "看（信息）· 尝（方式）· 行（吩咐）。"}, {"q": "林前11:28 要我们领餐前做什么？", "opts": ["禁食", "省察自己", "捐献", "认罪于人前"], "a": 1, "why": "人应当自己省察，然后吃喝（大意）。"}, {"q": "哪一项是改革宗所否认的？", "opts": ["饼变成基督的身体", "圣灵使我们与基督合一", "信心领受基督", "圣餐坚固信心"], "a": 0, "why": "问78：饼不变成基督真正的身体。"}, {"q": "多特信经哪一条提到神用圣礼保守信徒？", "opts": ["I.7", "III/IV.17", "V.14", "II.2"], "a": 2, "why": "第五项第14条。"}, {"q": "太26:29 把筵席指向哪里？", "opts": ["下一次逾越节", "父的国里同喝新的", "圣殿献祭", "五旬节"], "a": 1, "why": "指向将来的国度（启19:9 羔羊婚筵）。"}]}</script>
