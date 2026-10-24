@@ -4,7 +4,7 @@
 ## 线上链接 / Live links
 
 - GitHub Pages: https://08-ser-grok-je-personal-20261003.github.io/sermon-shengcan-weiyang-linghun-hc-ld28-mt26-20261024-v1-GROKser/
-- Surge: https://sermon-shengcan-weiyang-linghun-hc-ld28-mt26-20261024-v1-grokser.surge.sh
+- Surge: https://shengcan-weiyang-linghun-hc-ld28-mt26-20261024-v1-grokser.surge.sh
 - Repository: https://github.com/08-Ser-Grok-Je-Personal-20261003/sermon-shengcan-weiyang-linghun-hc-ld28-mt26-20261024-v1-GROKser
 
 静态、无框架的多页中文网站（HTML / CSS / 原生 JS，无外部库、字体、图片或脚本）。

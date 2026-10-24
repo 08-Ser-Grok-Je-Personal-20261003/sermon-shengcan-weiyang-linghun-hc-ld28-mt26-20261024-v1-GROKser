@@ -512,7 +512,7 @@ def heading_toc(body):
 
 
 GH_URL = "https://08-ser-grok-je-personal-20261003.github.io/sermon-shengcan-weiyang-linghun-hc-ld28-mt26-20261024-v1-GROKser/"
-SURGE_URL = "https://sermon-shengcan-weiyang-linghun-hc-ld28-mt26-20261024-v1-grokser.surge.sh"
+SURGE_URL = "https://shengcan-weiyang-linghun-hc-ld28-mt26-20261024-v1-grokser.surge.sh"
 REPO_URL = "https://github.com/08-Ser-Grok-Je-Personal-20261003/sermon-shengcan-weiyang-linghun-hc-ld28-mt26-20261024-v1-GROKser"
 LIVE_FOOT = ('<div class="live">线上链接 / Live links：'
              '<a href="%s" target="_blank" rel="noopener">GitHub Pages</a> · '
